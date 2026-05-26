@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Đào tạo chuyên ngành 2026</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  >
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Montserrat',sans-serif;
+    }
+
+    body{
+      background:
+      radial-gradient(circle at top left,#173ca8 0%,#081d63 40%,#041238 100%);
+      color:white;
+    }
+
+    .wrapper{
+      max-width:1350px;
+      margin:auto;
+      padding:40px 20px;
+    }
+
+    .main-title{
+      text-align:center;
+      font-size:55px;
+      font-weight:800;
+      margin-bottom:12px;
+      text-transform:uppercase;
+    }
+
+    .main-title .red{
+      color:#ff4f67;
+    }
+
+    .main-title .yellow{
+      color:#ffd84f;
+    }
+
+    .sub-title{
+      text-align:center;
+      font-size:22px;
+      color:#dce5ff;
+      margin-bottom:45px;
+    }
+
+
+    .custom-card{
+      background:rgba(10,33,109,.92);
+      border-radius:25px;
+      padding:28px;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:
+      0 15px 35px rgba(0,0,0,.35);
+      transition:.3s;
+      height:auto;
+    }
+
+    .custom-card:hover{
+      transform:translateY(-5px);
+    }
+
+    .card-label{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      background:linear-gradient(90deg,#ff2f63,#ff546d);
+      padding:12px 24px;
+      border-radius:50px;
+      font-weight:700;
+      font-size:18px;
+      margin-bottom:25px;
+    }
+
+
+    .main-content{
+      display:flex;
+      gap:28px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .image-box{
+      width:260px;
+      height:190px;
+      overflow:hidden;
+      border-radius:20px;
+      flex-shrink:0;
+    }
+
+    .student-image{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+  
+
+    .feature-list{
+      list-style:none;
+      padding:0;
+      margin:0;
+      flex:1;
+    }
+
+    .feature-list li{
+      display:flex;
+      align-items:center;
+      gap:15px;
+      margin-bottom:20px;
+      font-size:19px;
+      font-weight:500;
+    }
+
+    .feature-icon{
+      width:52px;
+      height:52px;
+      border-radius:16px;
+      background:rgba(255,255,255,.08);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#ffd84f;
+      font-size:22px;
+    }
+
+    .mini-card{
+      padding-bottom:35px;
+    }
+
+    .mini-content{
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+      gap:25px;
+      flex-wrap:wrap;
+      margin-top:15px;
+    }
+
+    .mini-item{
+      width:160px;
+      text-align:center;
+    }
+
+    .emoji-box{
+      width:85px;
+      height:85px;
+      border-radius:22px;
+      background:rgba(255,255,255,.08);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin:auto;
+      margin-bottom:15px;
+      font-size:36px;
+      color:#ffd84f;
+    }
+
+    .mini-item p{
+      font-size:17px;
+      line-height:1.5;
+      margin:0;
+      font-weight:600;
+    }
+    .bottom-box{
+      background:rgba(10,33,109,.92);
+      border-radius:22px;
+      padding:24px;
+      margin-top:25px;
+      text-align:center;
+      font-weight:700;
+      min-height:100px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:15px;
+      border:1px solid rgba(255,255,255,.08);
+
+      transition:.3s;
+    }
+
+    .bottom-box:hover{
+      background:#12359a;
+    }
+
+    .bottom-box i{
+      font-size:28px;
+      color:#ffd84f;
+    }
+
+    .footer{
+      margin-top:35px;
+      background:rgba(5,20,70,.96);
+      border-radius:28px;
+      padding:32px;
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    .website{
+      font-size:14px;
+      color:#9fb7ff;
+      margin-bottom:10px;
+    }
+
+    .logo{
+      font-size:42px;
+      font-weight:800;
+      color:#ff4f67;
+      line-height:1;
+    }
+
+    .uni{
+      margin-top:8px;
+      font-weight:600;
+    }
+
+    .address{
+      line-height:1.9;
+      color:#eef2ff;
+    }
+
+    .hotline{
+      display:inline-flex;
+      align-items:center;
+      gap:12px;
+      border:2px solid #ff4f67;
+      border-radius:50px;
+      padding:14px 24px;
+      font-weight:700;
+    }
+
+    .footer-bottom{
+      margin-top:25px;
+      padding-top:18px;
+
+      border-top:1px solid rgba(255,255,255,.08);
+
+      text-align:center;
+
+      letter-spacing:2px;
+      color:#cad6ff;
+      font-style:italic;
+    }
+
+
+    @media(max-width:992px){
+
+      .main-title{
+        font-size:38px;
+      }
+
+      .sub-title{
+        font-size:18px;
+      }
+
+      .main-content{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .image-box{
+        width:100%;
+        height:240px;
+      }
+
+      .feature-list li{
+        font-size:16px;
+      }
+
+      .mini-item{
+        width:100%;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+
+
+    <h1 class="main-title">
+      <span class="red">ĐÀO TẠO CÁC CHUYÊN NGÀNH</span>
+      <span class="yellow">2026</span>
+    </h1>
+
+    <div class="sub-title">
+      KHOA CÔNG NGHỆ THÔNG TIN • TRƯỜNG ĐẠI HỌC ĐẠI NAM
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-lg-7">
+
+        <div class="custom-card">
+
+          <div class="card-label">
+            <i class="bi bi-cpu-fill"></i>
+            1. CÔNG NGHỆ THÔNG TIN
+          </div>
+
+          <div class="main-content">
+
+            <div class="image-box">
+
+              <!-- ĐỔI LINK ẢNH -->
+              <img
+                src="https://files.catbox.moe/4uo7hl.jpg"
+                class="student-image"
+                alt=""
+              >
+
+            </div>
+
+            <ul class="feature-list">
+
+              <li>
+                <div class="feature-icon">
+                  <i class="bi bi-motherboard-fill"></i>
+                </div>
+
+                Hệ thống nhúng
+              </li>
+
+              <li>
+                <div class="feature-icon">
+                  <i class="bi bi-code-slash"></i>
+                </div>
+
+                Phát triển phần mềm
+              </li>
+
+              <li>
+                <div class="feature-icon">
+                  <i class="bi bi-robot"></i>
+                </div>
+
+                Robot và trí tuệ nhân tạo
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="col-lg-5">
+
+        <div class="custom-card mini-card mb-4">
+
+          <div class="card-label">
+            <i class="bi bi-diagram-3-fill"></i>
+            2. HỆ THỐNG THÔNG TIN
+          </div>
+
+          <div class="mini-content">
+
+            <div class="mini-item">
+
+              <div class="emoji-box">
+                <i class="bi bi-database-fill"></i>
+              </div>
+
+              <p>Cơ sở dữ liệu</p>
+
+            </div>
+
+            <div class="mini-item">
+
+              <div class="emoji-box">
+                <i class="bi bi-phone-fill"></i>
+              </div>
+
+              <p>Ứng dụng di động</p>
+
+            </div>
+
+            <div class="mini-item">
+
+              <div class="emoji-box">
+                <i class="bi bi-bar-chart-fill"></i>
+              </div>
+
+              <p>Phân tích dữ liệu</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="custom-card mini-card">
+
+          <div class="card-label">
+            <i class="bi bi-pc-display"></i>
+            3. KHOA HỌC MÁY TÍNH
+          </div>
+
+          <div class="mini-content">
+
+            <div class="mini-item">
+
+              <div class="emoji-box">
+                <i class="bi bi-graph-up-arrow"></i>
+              </div>
+
+              <p>Khoa học dữ liệu</p>
+
+            </div>
+
+            <div class="mini-item">
+
+              <div class="emoji-box">
+                <i class="bi bi-cpu"></i>
+              </div>
+
+              <p>Trí tuệ nhân tạo (AI)</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-4">
+
+        <div class="bottom-box">
+          <i class="bi bi-book-half"></i>
+          CHƯƠNG TRÌNH ĐÀO TẠO THỰC TIỄN
+        </div>
+
+      </div>
+
+      <div class="col-md-4">
+
+        <div class="bottom-box">
+          <i class="bi bi-award-fill"></i>
+          CƠ HỘI THỰC TẬP
+        </div>
+
+      </div>
+
+      <div class="col-md-4">
+
+        <div class="bottom-box">
+          <i class="bi bi-globe2"></i>
+          HỆ SINH THÁI CÔNG NGHỆ
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="footer">
+
+      <div class="row align-items-center">
+
+        <div class="col-lg-3">
+
+          <div class="website">
+            www.dainam.edu.vn
+          </div>
+
+          <div class="logo">
+            ĐẠI NAM
+          </div>
+
+          <div class="uni">
+            UNIVERSITY
+          </div>
+
+        </div>
+
+        <div class="col-lg-6">
+
+          <div class="address">
+            <i class="bi bi-geo-alt-fill"></i>
+            Văn phòng Khoa CNTT, Phòng 306,
+            Tòa nhà Central Building,
+            Trường Đại học Đại Nam
+          </div>
+
+        </div>
+
+        <div class="col-lg-3 text-lg-end mt-4 mt-lg-0">
+
+          <div class="hotline">
+            <i class="bi bi-telephone-fill"></i>
+            Hotline: 0981 595 999
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        KHƠI DẬY TIỀM NĂNG • VƯƠN TỚI THÀNH CÔNG
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
